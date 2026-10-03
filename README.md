@@ -35,3 +35,26 @@ A documentação interativa (Swagger UI) pode ser acessada através do navegador
 Este projeto segue rigorosamente o padrão **Conventional Commits** para manter o histórico limpo e rastreável. Exemplos de prefixos utilizados:
 *   `feat:` para novas funcionalidades (ex: `feat(produtos): cria controller de produtos`).
 *   `fix:` para correção de bugs ou ajustes (ex: `fix(produtos): corrige mapeamento do swagger no metodo put`).
+
+## Tecnologias Utilizadas
+
+*   **Java 17+**
+*   **Spring Boot 3+** (Web, Data JPA, Validation)
+*   **SpringDoc OpenAPI (Swagger):** Para documentação interativa da API.
+*   **Flyway:** Para versionamento e migração do banco de dados.
+*   **Padrão de Projeto:** DTO (Data Transfer Object) para isolamento do modelo.
+
+## Como Rodar o Projeto
+
+Siga os passos abaixo para executar a aplicação localmente:
+
+### Pré-requisitos
+*   Java Development Kit (JDK) 17 ou superior instalado.
+*   Maven instalado (ou utilize o `mvnw` embutido no projeto).
+*   Banco de dados PostgreSQL configurado (verifique as credenciais no arquivo `application.properties` ou `application.yml`).
+
+### Passo a Passo
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/seu-usuario/socialconnect.git](https://github.com/seu-usuario/socialconnect.git)
