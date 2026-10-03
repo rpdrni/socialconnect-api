@@ -19,12 +19,12 @@ public class Produto {
     @Column(name = "id_produto")
     private Long idProduto;
 
-    @Column(name = "nome_produto", nullable = false, length = 150)
-    private String nomeProduto;
+    @Column(name = "nome_produto", nullable = false, length = 150, unique = true)
+    private String nome;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "categoria_produto", nullable = false, length = 20)
-    private CategoriaProduto categoriaProduto;
+    private CategoriaProduto categoria;
 
     @Column(name = "estoque_atual", nullable = false)
     private Integer estoqueAtual;
@@ -33,7 +33,7 @@ public class Produto {
     private Integer estoqueMinimo;
 
     @Column(name = "unidade_medida", nullable = false)
-    private String unidadeDeMedia;
+    private String unidadeMedida;
 
     @Column(name = "data_cadastro", nullable = false)
     private LocalDate dataCadastro;

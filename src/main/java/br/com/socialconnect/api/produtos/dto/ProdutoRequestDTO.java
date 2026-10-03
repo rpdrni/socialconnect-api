@@ -2,6 +2,7 @@ package br.com.socialconnect.api.produtos.dto;
 
 import br.com.socialconnect.api.produtos.model.CategoriaProduto;
 import br.com.socialconnect.api.validation.DataNaoFutura;
+import br.com.socialconnect.api.validation.EstoqueNaoNegativo;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -19,6 +20,7 @@ public record ProdutoRequestDTO(
         CategoriaProduto categoriaProduto,
 
         @Min(value = 0, message = "{produto.estoque.minimo}")
+        @EstoqueNaoNegativo
         Integer estoqueAtual,
 
         @Min(value = 0)
@@ -26,11 +28,6 @@ public record ProdutoRequestDTO(
 
         @NotBlank
         @Size(max = 20)
-        String unidadeMedida,
-
-        @Schema(description = "Data em que o produto foi cadastrado", example = "2026-09-14")
-        @NotNull(message = "{NotNull.dataCadastro}")
-        @DataNaoFutura(message = "{DataNaoFutura.dataCadastro}")
-        LocalDate dataCadastro
+        String unidadeMedida
 ) {
 }

@@ -1,10 +1,12 @@
 package br.com.socialconnect.api.produtos.dto;
 
 import br.com.socialconnect.api.produtos.model.CategoriaProduto;
+import br.com.socialconnect.api.validation.DataNaoFutura;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
@@ -21,8 +23,12 @@ public record ProdutoResponseDTO(
         @Schema(example = "1")
         Integer estoqueMinimo,
         @Schema(example = "kg")
-        String unidadeDeMedia,
-        @Schema(description = "Data de cadastro (gerada pelo servidor)", example = "2026-09-14")
-        LocalDate dataCadastro
+        String unidadeMedida,
+        @Schema(description = "Data em que o produto foi cadastrado", example = "2026-09-14")
+        @NotNull(message = "{NotNull.dataCadastro}")
+        @DataNaoFutura(message = "{DataNaoFutura.dataCadastro}")
+        LocalDate dataCadastro,
+        @Schema(description = "Indica se o estoque atual está abaixo do mínimo", example = "false")
+        boolean estoqueBaixo
 ) {
 }
