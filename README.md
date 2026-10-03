@@ -12,7 +12,7 @@ Este repositório contém a implementação do módulo de gerenciamento de Produ
 
 ## Uso de Inteligência Artificial (IA)
 
-Para garantir a qualidade, padronização e o cumprimento rigoroso dos critérios da avaliação, ferramentas de Inteligência Artificial (IA) foram utilizadas durante o ciclo de desenvolvimento deste módulo com os seguintes propósitos:
+Para garantir a qualidade, padronização e o cumprimento rigoroso dos critérios da avaliação, a ferramente de Inteligência Artificial Gemini foi utilizada durante o ciclo de desenvolvimento deste módulo com os seguintes propósitos:
 
 1.  **Correção de Erros (Troubleshooting):** A IA foi utilizada para analisar inconsistências no mapeamento de rotas (como o vínculo correto de `@PathVariable` nos métodos PUT e DELETE) e identificar falhas de comunicação entre a interface do Swagger e o Controller.
 2.  **Criação de Anotações (Swagger/OpenAPI):** O assistente virtual auxiliou na estruturação e geração das anotações `@Operation`, `@Parameter` e `@ApiResponse`, garantindo que todos os fluxos de sucesso (200, 201, 204) e de erro (400, 404, 409, 422) exigidos pela regra de negócio fossem documentados corretamente na interface do Swagger.
